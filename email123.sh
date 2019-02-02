@@ -1,0 +1,6 @@
+MAILTO ="MAILTOVALIS@GMAIL.COM"
+SEND EMAIL TO
+SUB:HAI HELLO
+.............
+.............
+

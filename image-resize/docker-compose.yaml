@@ -1,0 +1,9 @@
+version: '3'
+services:
+    Nginx_image_proxy:
+        image: niiknow/nginx-image-proxy
+        restart: always
+        container_name: nginx-image-proxy
+        ports:
+            - '8012:80'
+            # - '443:443' // SSL Certificate

@@ -1,0 +1,30 @@
+version: '3'
+services:
+  prisma-feedback:
+    image: prismagraphql/prisma:1.7
+    restart: always
+    ports:
+    - "4477:4466"
+    environment:
+      PRISMA_CONFIG: |
+        managementApiSecret: my-server-secret-123
+        port: 4466
+        databases:
+          default:
+            connector: mysql  # or `postgres`
+            active: true
+            host: db-feedback
+            port: 3306        # or `5432` for `postgres`
+            user: root
+            password: graphcool
+  db-feedback:
+    container_name: prisma-db-feedback
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: graphcool
+    ports:
+    - "3377:3306"
+    volumes:
+    - /data/Applications/DB/.feedback_mysql:/var/lib/mysql

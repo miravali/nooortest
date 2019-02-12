@@ -1,0 +1,15 @@
+version: '3'
+services:
+  RabbitMQ:
+    image: "rabbitmq:3-management"
+    container_name: RABBIT_MQ
+    hostname: "rabbitmq"
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    restart: always
+    #volumes:
+    #- "/root/.Databases/enabled_plugins:/etc/rabbitmq/enabled_plugins"
+    #- "/root/.Databases/rabbitmq.config:/etc/rabbitmq/rabbitmq.config:ro"
+    #- "/root/.Databases/autocluster-0.4.1.ez:/usr/lib/rabbitmq/lib/rabbitmq_server-3.5.5/plugins/autocluster-0.4.1.ez"
+

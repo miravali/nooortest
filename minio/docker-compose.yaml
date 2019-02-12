@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+ minio:
+  image: minio/minio:RELEASE.2019-01-31T00-31-19Z  
+  volumes:
+    - /data/.databases/.MINIO:/export
+  ports:
+    - "9000:9000"
+  environment:
+   MINIO_ACCESS_KEY: liquid
+   MINIO_SECRET_KEY: liquid@2016
+  command: server /export
+
+## By default this config uses default local driver,
+## For custom volumes replace with volume driver configuration.

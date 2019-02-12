@@ -1,0 +1,13 @@
+version: '3'
+services:
+  mqtt:
+    container_name: MQTT
+    image: toke/mosquitto
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    restart: always
+###############################################
+###    volumes:################################
+###      - /data/.databases/.REDIS:/data#######
+#######################    restart: always#####
